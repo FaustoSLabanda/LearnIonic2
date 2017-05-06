@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Lista de Iconos</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+        
+        <button ion-item *ngFor="let item of icons">
+      <ion-icon [name]="item.icon" item-left></ion-icon>
+      {{item.name}}
+      <div class="item-note" item-right>
+        {{item.des}}
+      </div>
+    </button>
+    <button>
+      <div class="item-note">
+       
+      </div>
+    </button>
+    </ion-list>
+</ion-content>
